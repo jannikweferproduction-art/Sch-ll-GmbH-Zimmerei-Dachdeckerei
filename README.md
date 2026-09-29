@@ -22,7 +22,17 @@ Neue Website für zimmerei-schuell.de – statisches HTML/CSS mit wenig JavaScri
 
 Lokal ansehen (mit funktionierendem Formular-Skript): `php -S 127.0.0.1:8080 -t public` und dann http://127.0.0.1:8080 öffnen.
 
-## Veröffentlichen bei Hostinger
+## Automatisch veröffentlichen (GitHub → Hostinger)
+
+Bei jedem Push auf `main` (bzw. den Arbeits-Branch) baut die GitHub Action `.github/workflows/hostinger.yml` die Website und legt **nur den Inhalt von `public/`** in den Branch **`hostinger`**.
+
+In Hostinger (hPanel → Website → *Erweitert → GIT*):
+- Repository: `jannikweferproduction-art/Sch-ll-GmbH-Zimmerei-Dachdeckerei`
+- **Branch: `hostinger`**
+- Verzeichnis: leer lassen (dann landet alles direkt in `public_html`, das vorher leer sein muss)
+- „Automatische Bereitstellung“ aktivieren und die angezeigte Webhook-URL bei GitHub unter *Settings → Webhooks* eintragen.
+
+## Manuell veröffentlichen bei Hostinger
 
 1. Domain `zimmerei-schuell.de` bei Hostinger hinzufügen bzw. per Nameserver/DNS auf Hostinger zeigen lassen.
 2. SSL-Zertifikat im hPanel aktivieren (kostenlos).

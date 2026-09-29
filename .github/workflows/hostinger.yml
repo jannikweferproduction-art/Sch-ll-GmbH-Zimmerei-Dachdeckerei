@@ -1,0 +1,42 @@
+# Baut die Website und legt nur den Inhalt von public/ in den Branch „hostinger“.
+# Hostinger (Git-Deployment) zieht diesen Branch direkt nach public_html.
+name: Website für Hostinger bereitstellen
+
+on:
+  push:
+    branches:
+      - main
+      - claude/lucid-pascal-dloux4
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hostinger
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Website bauen
+        run: node src/build.mjs
+
+      - name: public/ in Branch „hostinger“ veröffentlichen
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: hostinger
+          force_orphan: true
+          enable_jekyll: true
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          commit_message: Website-Stand für Hostinger
