@@ -1,0 +1,34 @@
+<section class="page-head">
+  <div class="wrap">
+    <ol class="breadcrumb" aria-label="Brotkrumen">
+      <li><a href="/">Start</a></li>
+      <li aria-current="page">Leistungen</li>
+    </ol>
+    <p class="label">Zimmerei · Dachdeckerei · Energieberatung</p>
+    <h1 class="page-title">Leistungen für <span class="accent">Ihr Haus.</span></h1>
+    <p class="lead">Dach, Dämmung, Holzbau, Innenausbau und Asbestsanierung aus einem Meisterbetrieb in Varel. Wählen Sie den Bereich, der zu Ihrem Vorhaben passt – oder rufen Sie einfach an.</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="bereiche-titel">
+  <div class="wrap">
+    <h2 class="visually-hidden" id="bereiche-titel">Alle Leistungsbereiche</h2>
+    {{> leistungsliste}}
+  </div>
+</section>
+
+<section class="section section--grid" aria-labelledby="schichten-titel">
+  <div class="wrap layers">
+    <figure class="layers__figure" data-reveal>
+      {{> svg-schichten}}
+    </figure>
+    <div>
+      <p class="label">Alles greift ineinander</p>
+      <h2 class="section-title" id="schichten-titel" style="margin:16px 0 20px">Warum ein Betrieb für alles?</h2>
+      <p class="lead">Dach, Dämmung und Innenausbau hängen zusammen. Wenn Dachdecker, Zimmerer und Energieberater nicht miteinander reden, entstehen genau an den Übergängen die Probleme. Bei uns stimmt das ein Meister ab.</p>
+      <a class="arrow-link" href="/betrieb/">Zum Meister und seinem Team</a>
+    </div>
+  </div>
+</section>
+
+{{> kontakt-bereich}}

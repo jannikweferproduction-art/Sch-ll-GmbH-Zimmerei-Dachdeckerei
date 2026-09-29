@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="de" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<meta name="robots" content="{{robots}}">
+<link rel="canonical" href="{{canonical}}">
+<meta name="theme-color" content="#F3EEE5">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="{{site.name}}">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:image" content="{{site.url}}/assets/img/logo-schuell-480.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/barlow-condensed-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css?v={{cssVer}}">
+<script>document.documentElement.classList.replace('no-js','js')</script>
+<script src="/assets/js/site.js?v={{jsVer}}" defer></script>
+{{jsonLd}}
+</head>
+<body>
+<a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="site-header__logo" href="/" aria-label="Zimmerei &amp; Dachdeckerei Schüll – zur Startseite">
+      <img src="/assets/img/logo-schuell-240.png" srcset="/assets/img/logo-schuell-240.png 240w, /assets/img/logo-schuell-480.png 480w" sizes="206px" width="206" height="56" alt="Zimmerei Dachdeckerei Schüll – Meisterbetrieb">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="hauptmenue">
+      <span class="nav-toggle__bars" aria-hidden="true"></span>
+      <span class="nav-toggle__label">Menü</span>
+    </button>
+    <nav class="site-nav" id="hauptmenue" aria-label="Hauptnavigation">
+      <ul class="site-nav__list">
+        <li><a href="/leistungen/" data-nav="leistungen">Leistungen</a></li>
+        <li><a href="/betrieb/" data-nav="betrieb">Betrieb &amp; Meister</a></li>
+        <li><a href="/kontakt/" data-nav="kontakt">Kontakt</a></li>
+      </ul>
+      <a class="site-nav__phone" href="tel:{{site.phoneMobileHref}}"><span class="visually-hidden">Mobil anrufen: </span>{{site.phoneMobile}}</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt">
+{{content}}
+</main>
+
+{{> footer}}
+
+<nav class="quickbar" aria-label="Schnellkontakt">
+  <a href="tel:{{site.phoneMobileHref}}">Anrufen</a>
+  <a href="sms:{{site.phoneMobileHref}}">SMS</a>
+  <a class="quickbar__main" href="/kontakt/#anfrage">Fotos senden</a>
+</nav>
+</body>
+</html>

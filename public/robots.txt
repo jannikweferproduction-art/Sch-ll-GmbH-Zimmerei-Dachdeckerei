@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zimmerei-schuell.de/sitemap.xml

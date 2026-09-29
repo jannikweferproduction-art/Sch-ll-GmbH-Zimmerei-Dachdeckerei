@@ -1,0 +1,34 @@
+<section class="page-head">
+  <div class="wrap">
+    <ol class="breadcrumb" aria-label="Brotkrumen">
+      <li><a href="/">Start</a></li>
+      <li aria-current="page">Kontakt</li>
+    </ol>
+    <p class="label">Anruf · SMS · E-Mail · Formular</p>
+    <h1 class="page-title">Kontakt &amp; <span class="accent">Anfrage</span></h1>
+    <p class="lead">Am schnellsten erreichen Sie uns mobil – per Anruf oder SMS. Für eine erste Einschätzung helfen Fotos: Schicken Sie sie einfach mit dem Formular.</p>
+  </div>
+</section>
+
+{{> kontakt-bereich}}
+
+<section class="section" aria-labelledby="anfahrt-titel">
+  <div class="wrap split">
+    <div>
+      <p class="label">Anfahrt</p>
+      <h2 class="section-title" id="anfahrt-titel" style="margin:16px 0 20px">So finden Sie uns.</h2>
+      <address class="lead">
+        {{site.name}}<br>
+        {{site.street}}<br>
+        {{site.zip}} {{site.city}} / {{site.district}}
+      </address>
+      <p style="margin-top:20px"><a class="arrow-link" href="{{site.mapsUrl}}" rel="noopener" target="_blank">Route in Google Maps planen<span class="visually-hidden"> (öffnet neues Fenster)</span></a></p>
+    </div>
+    <ul class="facts">
+      <li><span class="label">Mobil &amp; SMS</span><a href="tel:{{site.phoneMobileHref}}">{{site.phoneMobile}}</a></li>
+      <li><span class="label">Büro</span><a href="tel:{{site.phoneOfficeHref}}">{{site.phoneOffice}}</a></li>
+      <li><span class="label">Fax</span><span>{{site.fax}}</span></li>
+      <li><span class="label">E-Mail</span><a href="mailto:{{site.email}}">{{site.email}}</a></li>
+    </ul>
+  </div>
+</section>
