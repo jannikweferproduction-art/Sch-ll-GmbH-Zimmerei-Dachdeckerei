@@ -10,10 +10,10 @@ AddType font/woff2 .woff2
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Immer HTTPS und ohne „www.“
-  RewriteCond %{HTTPS} off [OR]
-  RewriteCond %{HTTP_HOST} ^www\. [NC]
-  RewriteRule ^(.*)$ https://zimmerei-schuell.de/$1 [R=301,L]
+  # Ohne „www.“ – funktioniert mit jeder Domain (auch der Hostinger-Testadresse).
+  # HTTPS erzwingen: im hPanel unter Sicherheit > SSL > „HTTPS erzwingen“ einschalten.
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
   # Adressen der alten Website auf die neuen Seiten umleiten
   RewriteRule ^der-betrieb/?$ /betrieb/ [R=301,L]
